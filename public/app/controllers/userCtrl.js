@@ -1,8 +1,8 @@
 angular.module('userControllers',[])
-.controller('regCtrl', function($scope,$http,$location,$timeout) {
+.controller('regCtrl', function($scope,$http,$location,$timeout,User) {
 
     $scope.regUser = function(userData){
-        $http.post('/api/users',userData).then(function(data){
+        User.create(userData).then(function(data){
             if(data.data.success)
             {
                 console.log(data.data.success);
