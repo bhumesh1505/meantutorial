@@ -14,36 +14,47 @@
     <script src="assets/js/angular-route.js"></script>
     <script src="assets/js/angular-animate.js"></script>
 
-<!--
-    &lt;!&ndash; Angular Config/Routes &ndash;&gt;
+    <!-- Angular Config/Routes -->
     <script src="app/app.js"></script>
     <script src="app/routes.js"></script>
 
-    &lt;!&ndash; Angular Controllers &ndash;&gt;
+    <!-- Angular Controllers -->
     <script src="app/controllers/userCtrl.js"></script>
     <script src="app/controllers/mainCtrl.js"></script>
     <script src="app/controllers/emailCtrl.js"></script>
     <script src="app/controllers/managementCtrl.js"></script>
 
-    &lt;!&ndash; Angular Services &ndash;&gt;
+    <!-- Angular Services -->
     <script src="app/services/userServices.js"></script>
     <script src="app/services/authServices.js"></script>
--->
 
     <!-- Cascade Style Sheets -->
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/myStyle.css">
 
     <title>MEAN Stack App</title>
 
 </head>
+<body ng-app="userApp">
     <h1>INDEX PAGE</h1>
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="assets/js/jquery-3.1.1.min.js"></script>
-<script src="assets/js/bootstrap.js"></script>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/register">Register</a>
+    <div class="container">
+        <div ng-view></div>
+    </div>
+
+
+    <!-- Custom Messages -->
+    <div class="row show-hide-message notificationBox">
+        <div class="alert alert-success"></div>
+    </div>
+    <!-- Custom Messages -->
+
+    <script src="assets/js/jquery-3.1.1.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
 </body>
 
 </html>
