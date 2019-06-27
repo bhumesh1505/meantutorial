@@ -1,21 +1,24 @@
 angular.module('userControllers',[])
 .controller('regCtrl', function($scope,$http,$location,$timeout,User) {
 
-    $scope.regUser = function(userData){
-        User.create(userData).then(function(data){
-            if(data.data.success)
-            {
-                console.log(data.data.success);
-                console.log(data.data.msg);
-                $timeout(function(){
-                    $location.path('/');
-                },1000);
-            }
-            else
-            {
-                console.log(data.data.success);
-                console.log(data.data.msg);
-            }
-        })
-    }
+        $scope.successMsg = false;
+        $scope.errorMsg = false;
+
+        $scope.regUser = function(userData){
+            $scope.successMsg = false;
+            $scope.errorMsg = false;
+            User.create(userData).then(function(data){
+                if(data.data.success)
+                {
+                    $scope.successMsg = data.data.msg;
+                    $timeout(function(){
+                        $location.path('/');
+                    },1000);
+                }
+                else
+                {
+                    $scope.errorMsg = data.data.msg;
+                }
+            })
+        }
 });
