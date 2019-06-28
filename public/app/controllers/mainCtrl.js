@@ -2,21 +2,23 @@ angular.module('mainController',[])
 .controller('mainCtrl',function($scope,Auth,$location,$timeout,$rootScope){
 
         $scope.userdetails = {};
+        $scope.isLoggedIn = false;
+        $scope.pageLoaded = false;
 
         // every time when route changes it will execute this function
         $rootScope.$on('$routeChangeStart', function(){
             if(Auth.isLoggedIn()){
-                console.log('Success: user is logged in !');
                 Auth.getUserFromToken().then(function(data){
                     $scope.userdetails.username = data.data.username;
                     $scope.userdetails.email = data.data.email;
-                    console.log($scope.userdetails);
+                    $scope.isLoggedIn = true;
+                    $scope.pageLoaded = true;
                 });
             }
             else {
-                // clear username
                 $scope.userdetails = {};
-                console.log('Failure: user is not logged in !');
+                $scope.isLoggedIn = false;
+                $scope.pageLoaded = true;
             }
         });
 
