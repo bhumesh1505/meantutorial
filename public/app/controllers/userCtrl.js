@@ -12,7 +12,7 @@ angular.module('userControllers',[])
                 {
                     $scope.successMsg = data.data.msg;
                     $timeout(function(){
-                        $location.path('/');
+                        $location.path('/login');
                     },1000);
                 }
                 else

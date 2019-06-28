@@ -3,6 +3,6 @@ angular.module('userServices',[])
     var userFactory = {};
     userFactory.create = function(userData){
         return $http.post('/api/users',userData);
-    }
+    };
     return userFactory;
-})
+});

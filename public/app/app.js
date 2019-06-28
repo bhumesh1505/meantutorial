@@ -3,5 +3,11 @@ var app = angular.module('userApp',
         'appRoutes',
         'userControllers',
         'userServices',
-        'ngAnimate'
-    ]);
+        'ngAnimate',
+        'mainController',
+        'authServices'
+    ])
+
+    .config(function($httpProvider){
+        $httpProvider.interceptors.push('AuthInterceptors');
+    });
