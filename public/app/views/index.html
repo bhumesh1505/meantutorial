@@ -33,11 +33,14 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
     <link rel="stylesheet" type="text/css" href="assets/css/myStyle.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/loader.css">
 
     <title>MEAN Stack App</title>
 
 </head>
-<body ng-app="userApp" ng-controller="mainCtrl" ng-show="pageLoaded" ng-cloak="">
+<body ng-app="userApp" ng-controller="mainCtrl" ng-cloak="">
+    <div class="loader"></div>
+
     <nav class="navbar navbar-inverse" style="border-radius: 0px">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -92,6 +95,16 @@
     <div class="container">
         <div ng-view></div>
     </div>
+    <script>
+        function fadeout()
+        {
+            $('.loader').fadeOut();
+        }
+        function fadein()
+        {
+            $('.loader').fadeIn();
+        }
+    </script>
     <script src="assets/js/jquery-3.1.1.min.js"></script>
     <script src="assets/js/bootstrap.js"></script>
 </body>

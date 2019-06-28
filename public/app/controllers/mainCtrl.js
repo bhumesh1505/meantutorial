@@ -7,18 +7,24 @@ angular.module('mainController',[])
 
         // every time when route changes it will execute this function
         $rootScope.$on('$routeChangeStart', function(){
+
+            $scope.successMsg = false;
+            $scope.errorMsg = false;
+
             if(Auth.isLoggedIn()){
                 Auth.getUserFromToken().then(function(data){
                     $scope.userdetails.username = data.data.username;
                     $scope.userdetails.email = data.data.email;
                     $scope.isLoggedIn = true;
                     $scope.pageLoaded = true;
+                    fadeout();
                 });
             }
             else {
                 $scope.userdetails = {};
                 $scope.isLoggedIn = false;
                 $scope.pageLoaded = true;
+                fadeout();
             }
         });
 
