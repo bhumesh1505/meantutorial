@@ -15,7 +15,7 @@ app.use(express.static(__dirname + '/public'));
 app.use('/api',appRoutes);
 //http://localhost:8000/api/users
 
-mongoose.connect('mongodb+srv://bhumesh1998:bhumesh1998@cluster0-ubi02.mongodb.net/test?retryWrites=true&w=majority',function(err){
+mongoose.connect('mongodb+srv://bhumesh1998:bhumesh1998@cluster0-ubi02.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true, useUnifiedTopology: true }, function(err){
 	if(err){
 		console.log("failed to connect to database: " + err);
 	}
