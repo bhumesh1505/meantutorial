@@ -20,7 +20,7 @@
   "homepage": "https://github.com/bhumesh1505/meantutorial#readme",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.10",
     "morgan": "^1.10.0"
